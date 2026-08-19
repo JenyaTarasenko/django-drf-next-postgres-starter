@@ -130,13 +130,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Next.js dev
-    # "http://157-230-143-66.nip.io:3000"
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    "http://frontend:3000",
-    "http://157-230-143-66.nip.io:3000",
+    "http://127.0.0.1:3000",
 ]
 # ALLOWED_HOSTS = [
 #     # '157.230.143.66',        # прямой IP сервера
@@ -150,7 +152,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "0.0.0.0",
     "backend",   # ← ВАЖНО для Docker
-    '157-230-143-66.nip.io', # временный домен для заказчика
+    # '157-230-143-66.nip.io', # временный домен для заказчика
 ]
 
 MEDIA_URL = '/media/'
