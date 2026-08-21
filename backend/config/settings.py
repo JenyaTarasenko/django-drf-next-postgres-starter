@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "authentication",#аунтификация приложение
+    'tasks',#задачи приложение для celery redis
+    
 ]
 
 MIDDLEWARE = [
@@ -168,3 +170,10 @@ SIMPLE_JWT = {
 }
 
 ######################################
+
+####################CELERY REDIS####config.celery##############
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+
+####################CELERY REDIS##################
